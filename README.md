@@ -14,7 +14,7 @@ and also the async fetch works better with long running processes.
 
 Added some structures in API with attemps to structure the backend, but after reading through the test requirements,
 I felt on the API side it's more about processing rather than setup the backend structure, simply due to time constraint.
-I have taken some tests yerterday, which required me to refactor API, feel free to look into it if you wish.
+I have taken some tests yerterday, which required me to refactor API, structure it properly, feel free to look into it if you wish.
 The test: https://github.com/doggyfish/RefactorThisOriginal.git
 What I produced: https://github.com/doggyfish/RefactorThis.git
 
@@ -27,30 +27,13 @@ import { useState } from "react";
 const nav = useNavigate();
 
 I might have over complicated the 2nd output, so I removed the whole section
-<table className="table table-hover">
-                <thead>
-                    <tr>
-                        {data && data.sales.map(h => (
-                            <th key={h.id}>
-                                Year {h.yearOfSale}
-                            </th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody>
-                    {/* { data &&
-                        <tr>
-                            <td>{currencyFormatter.format(data.sales.reduce((a, v) => a = a + v.tierOne.teirPercentageRent, 0))}</td>
-                            <td>{currencyFormatter.format(data.sales.reduce((a, v) => a = a + v.tierTwo.teirPercentageRent, 0))}</td>
-                            <td>{currencyFormatter.format(data.sales.reduce((a, v) => a = a + v.tierThree.teirPercentageRent, 0))}</td>
-                        </tr>
-                    } */}
-                </tbody>
-            </table>
+![image](https://user-images.githubusercontent.com/3989272/204757625-56c3ec3a-39ac-41fc-95e1-8f96616f6eee.png)
 
 and added following two lines to the first table
-<th>Total Sum of Rend for Tiers 1 2 & 3</th>
-<td>{currencyFormatter.format(h.tierOne.teirPercentageRent + h.tierTwo.teirPercentageRent + h.tierThree.teirPercentageRent)}</td>
+
+\<th\>Total Sum of Rend for Tiers 1 2 & 3\</th\>
+
+\<td\>{currencyFormatter.format(h.tierOne.teirPercentageRent + h.tierTwo.teirPercentageRent + h.tierThree.teirPercentageRent)}\</td\>
 
 2. 
 adding more controls to the UI, Year One Sales, Base Rent (years 1 to 5), Base Rent (years 6 to 10), Percentage Rent Tier 1,
